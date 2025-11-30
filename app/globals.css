@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Utilities in Theme */
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Utilities */
+@utility hard-shadow {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+@utility hard-shadow-hover {
+  box-shadow: 2px 2px 0px 0px #000000;
+  transform: translate(4px, 4px);
+}
+
+@utility hard-border {
+  border: 3px solid #000000;
+}
+
+@utility dot-pattern {
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+@utility mono-font {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Base Resets */
+body {
+  font-family: 'Courier New', Courier, monospace; /* Varsayılan fontu monospace yaptık */
+  @apply bg-white text-black min-h-screen;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
